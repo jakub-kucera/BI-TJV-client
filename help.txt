@@ -8,15 +8,18 @@ Options:
         delete
             id
         update
+            id
             entity
+        giveScholarShip
+            scholarShip
 
     --app.entity
-        Dormitory (action only read)
-        Room (action only read)
+        Dormitory (only read)
+        Room (only read)
         Student
             name
-            date of birth
-            room id
+            dateOfBirth
+            roomId
             account
-            list of faculties
-        Faculty (action only read)
+            facultyIds
+        Faculty (only read)

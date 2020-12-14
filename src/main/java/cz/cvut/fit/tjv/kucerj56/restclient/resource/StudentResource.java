@@ -49,7 +49,11 @@ public class StudentResource {
         return restTemplate.exchange(ONE_URI, HttpMethod.PUT, new HttpEntity<StudentCreateDTO>(studentCreateDTO), StudentDTO.class, id).getBody();
     }
 
-    public List<StudentDTO> giveScholarShip(Double amount) {
+    public void delete(String id) {
+        restTemplate.delete(ONE_URI, id);
+    }
+
+    public List<StudentDTO> giveScholarShip(String amount) {
 //        return Arrays.asList(restTemplate.getForObject( SCHOLARSHIP_URI, StudentDTO[].class, amount).clone());
         return Arrays.asList(Objects.requireNonNull(restTemplate.exchange(SCHOLARSHIP_URI, HttpMethod.PUT, new HttpEntity<Object>(null), StudentDTO[].class, amount).getBody()).clone());
     }
