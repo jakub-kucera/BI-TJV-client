@@ -1,0 +1,22 @@
+Options:
+    --app.action
+        read
+            id
+        readAll
+        create
+            entity
+        delete
+            id
+        update
+            entity
+
+    --app.entity
+        Dormitory (action only read)
+        Room (action only read)
+        Student
+            name
+            date of birth
+            room id
+            account
+            list of faculties
+        Faculty (action only read)
