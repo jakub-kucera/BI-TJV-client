@@ -12,11 +12,6 @@ import java.util.List;
 public class DormitoryResource {
     private final RestTemplate restTemplate;
 
-//    @Autowired
-//    public DormitoryResource(RestTemplate restTemplate) {
-//        this.restTemplate = restTemplate;
-//    }
-
     public DormitoryResource(RestTemplateBuilder restTemplateBuilder) {
         restTemplate = restTemplateBuilder.rootUri(ROOT_RESOURCE_URL).build();
     }
@@ -25,10 +20,10 @@ public class DormitoryResource {
     private static final String ONE_URI = "/{id}";
 
     public DormitoryDTO readById(String id) {
-        return restTemplate.getForObject(/*ROOT_RESOURCE_URL +*/ ONE_URI, DormitoryDTO.class, id);
+        return restTemplate.getForObject(ONE_URI, DormitoryDTO.class, id);
     }
 
     public List<DormitoryDTO> readAll() {
-        return Arrays.asList(restTemplate.getForObject(/*ROOT_RESOURCE_URL*/ "/", DormitoryDTO[].class).clone());
+        return Arrays.asList(restTemplate.getForObject("/", DormitoryDTO[].class).clone());
     }
 }

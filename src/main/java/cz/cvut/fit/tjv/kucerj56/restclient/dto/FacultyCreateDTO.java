@@ -23,6 +23,7 @@ public class FacultyCreateDTO {
     public String getName() {
         return name;
     }
+
     public List<Integer> getStudentIds() {
         return studentIds;
     }

@@ -10,7 +10,7 @@ import java.util.Objects;
 public class StudentCreateDTO {
 
     private final String name;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private final Date dateOfBirth;
     private final Integer roomId;
     private final Double stateOfAccount;
@@ -58,14 +58,11 @@ public class StudentCreateDTO {
         if (o == null || getClass() != o.getClass()) return false;
         StudentCreateDTO that = (StudentCreateDTO) o;
         return name.equals(that.name) &&
-                dateOfBirth.getTime() == that.dateOfBirth.getTime();/* &&*/
-//                roomId.equals(that.roomId) &&
-//                stateOfAccount.equals(that.stateOfAccount) &&
-//                facultyIds.equals(that.facultyIds);
+                dateOfBirth.getTime() == that.dateOfBirth.getTime();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, dateOfBirth.getTime()/*, roomId, stateOfAccount, facultyIds*/);
+        return Objects.hash(name, dateOfBirth.getTime());
     }
 }

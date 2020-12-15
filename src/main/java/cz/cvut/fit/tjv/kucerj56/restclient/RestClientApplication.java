@@ -16,7 +16,6 @@ import cz.cvut.fit.tjv.kucerj56.restclient.resource.DormitoryResource;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.sql.SQLOutput;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,7 +24,6 @@ import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 @SpringBootApplication
-//@EnableHypermediaSupport(type = EnableHypermediaSupport.HypermediaType.HAL)
 public class RestClientApplication implements ApplicationRunner {
     @Autowired
     private DormitoryResource dormitoryResource;
@@ -169,11 +167,6 @@ public class RestClientApplication implements ApplicationRunner {
             printHelp();
         }
 
-//        printDormitories(dormitoryResource.readAll());
-//        printFaculties(facultyResource.readAll());
-//        printRooms(roomResource.readAll());
-//        printStudents(studentResource.readAll());
-//        printStudents(studentResource.readById("10"));
     }
 
     //Students

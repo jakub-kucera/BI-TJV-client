@@ -1,6 +1,5 @@
 package cz.cvut.fit.tjv.kucerj56.restclient.resource;
 
-import cz.cvut.fit.tjv.kucerj56.restclient.dto.DormitoryDTO;
 import cz.cvut.fit.tjv.kucerj56.restclient.dto.FacultyDTO;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Component;
@@ -13,11 +12,6 @@ import java.util.List;
 public class FacultyResource {
     private final RestTemplate restTemplate;
 
-//    @Autowired
-//    public DormitoryResource(RestTemplate restTemplate) {
-//        this.restTemplate = restTemplate;
-//    }
-
     public FacultyResource(RestTemplateBuilder restTemplateBuilder) {
         restTemplate = restTemplateBuilder.rootUri(ROOT_RESOURCE_URL).build();
     }
@@ -26,10 +20,10 @@ public class FacultyResource {
     private static final String ONE_URI = "/{id}";
 
     public FacultyDTO readById(String id) {
-        return restTemplate.getForObject(/*ROOT_RESOURCE_URL +*/ ONE_URI, FacultyDTO.class, id);
+        return restTemplate.getForObject(ONE_URI, FacultyDTO.class, id);
     }
 
     public List<FacultyDTO> readAll() {
-        return Arrays.asList(restTemplate.getForObject(/*ROOT_RESOURCE_URL*/ "/", FacultyDTO[].class).clone());
+        return Arrays.asList(restTemplate.getForObject("/", FacultyDTO[].class).clone());
     }
 }

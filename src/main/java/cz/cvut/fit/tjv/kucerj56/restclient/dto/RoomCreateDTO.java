@@ -29,6 +29,7 @@ public class RoomCreateDTO {
         this.dormitoryId = dormitoryId;
         this.studentIds = studentIds;
     }
+
     public int getNumberRoom() {
         return numberRoom;
     }

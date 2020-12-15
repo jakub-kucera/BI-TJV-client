@@ -10,7 +10,7 @@ public class StudentDTO {
 
     private final int id;
     private final String name;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private final Date dateOfBirth;
     private final Integer roomId;
     private final Double stateOfAccount;
@@ -62,14 +62,11 @@ public class StudentDTO {
 
         return id == that.id &&
                 name.equals(that.name) &&
-                dateOfBirth.getTime() == that.dateOfBirth.getTime();/* && */ //todo change date formatting
-//                roomId.equals(that.roomId) &&
-//                stateOfAccount.equals(that.stateOfAccount) &&
-//                facultyIds.equals(that.facultyIds);
+                dateOfBirth.getTime() == that.dateOfBirth.getTime();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, dateOfBirth.getTime()/*, roomId, stateOfAccount, facultyIds*/);
+        return Objects.hash(id, name, dateOfBirth.getTime());
     }
 }

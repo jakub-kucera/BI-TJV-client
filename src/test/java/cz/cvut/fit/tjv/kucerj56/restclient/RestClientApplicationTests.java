@@ -7,10 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class RestClientApplicationTests {
-
     @Test
     void contextLoads() {
-        assertEquals(0,0);
+        assertEquals(0, 0);
     }
-
 }
