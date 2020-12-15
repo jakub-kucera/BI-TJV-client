@@ -78,7 +78,7 @@ public class RestClientApplication implements ApplicationRunner {
                                     args.containsOption("app.dateOfBirth") &&
                                     args.containsOption("app.roomId") &&
                                     args.containsOption("app.account") &&
-                                    args.containsOption("app.account") &&
+                                    args.containsOption("app.facultyIds") &&
                                     args.containsOption("app.id")) {
                                 StudentCreateDTO studentCreateDTO = new StudentCreateDTO(args.getOptionValues("app.name").get(0),
                                         new Date(args.getOptionValues("app.dateOfBirth").get(0)),
@@ -173,6 +173,7 @@ public class RestClientApplication implements ApplicationRunner {
 //        printFaculties(facultyResource.readAll());
 //        printRooms(roomResource.readAll());
 //        printStudents(studentResource.readAll());
+//        printStudents(studentResource.readById("10"));
     }
 
     //Students
